@@ -46,16 +46,16 @@ export default class LineMessagingClient {
     });
   }
 
-  public async fetchImageByAxios(messageId: string): Promise<void> {
-    try {
-      const url = `https://api-data.line.me/v2/bot/message/${messageId}/content`;
-      const res = await axios.get(url, {
-        responseType: 'arraybuffer',
-        headers: { Authorization: `Bearer ${env.CHANNEL_ACCESS_TOKEN}` },
-      });
-      fs.writeFileSync('./data/sample.jpg', Buffer.from(res.data));
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  // public async fetchImageByAxios(messageId: string): Promise<void> {
+  //   try {
+  //     const url = `https://api-data.line.me/v2/bot/message/${messageId}/content`;
+  //     const res = await axios.get(url, {
+  //       responseType: 'arraybuffer',
+  //       headers: { Authorization: `Bearer ${env.CHANNEL_ACCESS_TOKEN}` },
+  //     });
+  //     fs.writeFileSync('./data/sample.jpg', Buffer.from(res.data));
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // }
 }
